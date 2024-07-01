@@ -1,1 +1,1 @@
-# Predicting the Outcome of an NBA Team in a Season Using a Neural Network Model
+# Predicting the Outcome of the Playoffs in a NBA Season Using a Neural Network Model
