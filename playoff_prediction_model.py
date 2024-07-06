@@ -3,9 +3,6 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from IPython.display import clear_output
-
 import tensorflow as tf
 import keras
 
@@ -24,7 +21,6 @@ for i in nbapf_testing_data['Team']:
         vocabulary_list.append(i)
 
 vocabulary_dict = {k: v for v, k in enumerate(vocabulary_list)}
-
 
 #separating the labels
 training_data_outcome = nbapf_training_data.pop('Outcome')
@@ -101,11 +97,17 @@ playoff_predictor.compile(
 )
 
 #%%
-playoff_predictor.fit(nbapf_training_data, training_data_outcome, epochs=20)
+playoff_predictor.fit(
+    nbapf_training_data, 
+    training_data_outcome,
+    shuffle = False,
+    batch_size=16, 
+    epochs=10
+    )
 
 #%%
 #evaluating the model
-test_loss, test_acc = playoff_predictor.evaluate(nbapf_testing_data, testing_data_outcome, verbose=1)
+test_loss, test_acc = playoff_predictor.evaluate(nbapf_testing_data, testing_data_outcome, verbose=1, batch_size=16)
 print('Test Accuracy: ', test_acc)
 
 # %%
