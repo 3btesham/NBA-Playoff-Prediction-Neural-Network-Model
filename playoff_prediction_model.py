@@ -84,7 +84,7 @@ nbapf_testing_data = tf.convert_to_tensor(nbapf_testing_data, tf.float32)
 #creating the model
 playoff_predictor = keras.Sequential([
     keras.layers.Flatten(),
-    keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dense(100, activation='relu'),
     keras.layers.Dense(6, activation='softmax')
 ])
 
@@ -102,7 +102,7 @@ playoff_predictor.fit(
     training_data_outcome,
     shuffle = False,
     batch_size=16, 
-    epochs=10
+    epochs=20
     )
 
 #%%
@@ -112,9 +112,15 @@ print('Test Accuracy: ', test_acc)
 
 # %%
 #predicting the model
-predictions = playoff_predictor.predict(nbapf_testing_data)
+predictions = playoff_predictor.predict(nbapf_testing_data, batch_size=16)
 for i in range(len(predictions)):
     print(int(nbapf_testing_data[i][0]), " ", vocabulary_list[int(nbapf_testing_data[i][1])], "is expected to have a", class_names[np.argmax(predictions[i])-1])
     print('They actually had a ' + class_names[testing_data_outcome[i]-1])
     
+# %%
+#predicting the playoffs 2
+predictions = playoff_predictor.predict(nbapf_testing_data, batch_size=16)
+for i in range(160, 176):
+    print(int(nbapf_testing_data[i][0]), vocabulary_list[int(nbapf_testing_data[i][1])])
+    print(predictions[i][4] * 100)
 # %%
