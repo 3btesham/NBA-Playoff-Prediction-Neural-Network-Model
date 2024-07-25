@@ -5,7 +5,7 @@
 - Probability distributions for every single team were very similar
 - Sometimes would get wild outputs that made no sense (a really bad team would be declared the champion)
 
-## Accuracy 7/25/2024: ~51%-55%
+## Accuracy 7/25/2024: ~51%-56%
 ### Changes:
 - Fixed multiple problems with pre-processing the data (did not apply the same process between testing/training data)
 - Applied a tanh activation function rather than a relu activation funciton
@@ -22,6 +22,6 @@
 - Specify the conference of each team and standing within conference (better reflect reality of the playoffs)
 - Add net difference for each stat from the league average
 - Play around with different optimization functions and different loss functions
-- Keep testing different model architectures
+- Adjust hyperparameters
 
 ## Accuracy 7/27/2024: 
