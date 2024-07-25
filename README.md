@@ -1,5 +1,5 @@
 # Predicting the Outcome of a Team in the NBA Playoffs Using a Neural Network Model
-##Accuracy 7/21/2024: ~6%-50%
+## Accuracy 7/21/2024: ~6%-50%
 - Would choose one class to apply to every single team (ex: every team would have a first round exit or a championship)
 - Probability distributions for every single team were very similar
 - Sometimes would get wild outputs that made no sense (a really bad team would be declared the champion)
