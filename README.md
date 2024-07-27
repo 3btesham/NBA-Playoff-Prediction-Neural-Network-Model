@@ -41,6 +41,7 @@
 
 ### Possible Improvements:
 - Add total playoff games, playoff wins, losses for all players for each team
+- Add previous mvp shares
 - Add total championships for all players for each team
 - Add league average net differentials for each datapoint for every single statistic for every single team
 - Research other advanced statistics that accurately evaluate a teams possible performance in the playoffs
