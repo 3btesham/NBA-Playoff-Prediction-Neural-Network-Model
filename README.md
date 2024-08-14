@@ -11,6 +11,7 @@
 ### Possible Improvements:
 - Do a further analysis of what parts of the site I want to scrape to collect seasonal data for
 - Add delays to scraping algorithms to avoid triggering bot detection systems
+- Add switching proxies to also avoid bot detection systems (don't really want to use paid ones though)
 - Store any collected data in csv files
 - Work on this more consistently (was moving in past 2 weeks so did not have much time to focus on this project)
 
